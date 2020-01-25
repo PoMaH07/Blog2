@@ -58,6 +58,37 @@ class __TwigTemplate_4090ee26a1fae0ad9777ae41dd9d0000589a1f190eda745b7868b09bfed
         // line 5
         echo "    <h1>List posts</h1>
     <a class=\"btn\" href=\"/post/add\">Add post</a>
+    
+    <div class=\"post-list\">
+        ";
+        // line 9
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 9, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 10
+            echo "        <div class=\"post\">
+            <h3>";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 11), "html", null, true);
+            echo "</h3>
+            <i>";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "dateUpdate", [], "any", false, false, false, 12), "html", null, true);
+            echo "</i>
+            <p>";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 13), "html", null, true);
+            echo "</p>
+        </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "    </div>
+        
+        
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -76,7 +107,7 @@ class __TwigTemplate_4090ee26a1fae0ad9777ae41dd9d0000589a1f190eda745b7868b09bfed
 
     public function getDebugInfo()
     {
-        return array (  59 => 5,  52 => 4,  35 => 1,);
+        return array (  89 => 16,  80 => 13,  76 => 12,  72 => 11,  69 => 10,  65 => 9,  59 => 5,  52 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -87,7 +118,19 @@ class __TwigTemplate_4090ee26a1fae0ad9777ae41dd9d0000589a1f190eda745b7868b09bfed
 {% block body %}
     <h1>List posts</h1>
     <a class=\"btn\" href=\"/post/add\">Add post</a>
+    
+    <div class=\"post-list\">
+        {% for post in posts %}
+        <div class=\"post\">
+            <h3>{{post.title}}</h3>
+            <i>{{post.dateUpdate}}</i>
+            <p>{{post.description}}</p>
+        </div>
+        {% endfor %}
+    </div>
+        
+        
 {% endblock %}
-", "posts/list.html.twig", "/home/skillup_student/Рабочий стол/Ivanov300192/fffff/blogphp/templates/posts/list.html.twig");
+", "posts/list.html.twig", "/home/skillup_student/Рабочий стол/Ivanov300192/fffff/templates/posts/list.html.twig");
     }
 }

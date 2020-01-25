@@ -27,9 +27,13 @@ class Post
     private $description;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $date_update;
+    
+    public function __construct() {
+        $this->date_update = new \DateTime();
+    }
 
     public function getId()
     {
@@ -62,7 +66,7 @@ class Post
 
     public function getDateUpdate()
     {
-        return $this->date_update;
+        return $this->date_update->format('d.m.Y | H:i:s');
     }
 
     public function setDateUpdate(\DateTimeInterface $date_update)
